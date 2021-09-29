@@ -2,3 +2,4 @@
 /weather-fetcher-api/target/
 /weather-fetcher-features/target/
 /weather-fetcher-impl/target/
+/.idea/
