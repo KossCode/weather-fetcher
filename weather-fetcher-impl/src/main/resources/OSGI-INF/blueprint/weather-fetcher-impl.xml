@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+           xmlns:cxf="http://cxf.apache.org/blueprint/core"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+           xsi:schemaLocation="
+             http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+             http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
+             http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
+             "
+           default-activation="lazy">
+
+    <cm:property-placeholder persistent-id="org.openweathermap.api"
+                             update-strategy="reload">
+        <cm:default-properties>
+            <!--            <cm:property name="units" value="<value>" />-->
+        </cm:default-properties>
+    </cm:property-placeholder>
+
+
+    <bean id="openWeatherMapPropertiesBean"
+          class="edu.vshkvarok.traineeship.weather.fetcher.impl.OpenWeatherMapProperties">
+        <argument value="${appId}"/>
+        <argument value="${units}"/>
+    </bean>
+
+    <bean id="openWeatherMapClientBean"
+          class="edu.vshkvarok.traineeship.weather.fetcher.impl.StaticOpenWeatherMapFactory"
+          factory-method="createProxy">
+        <argument value="${baseAddress}"/>
+    </bean>
+
+
+    <cxf:bus id="sampleServiceBus"/>
+
+    <bean id="weatherFetcher"
+          class="edu.vshkvarok.traineeship.weather.fetcher.impl.WeatherFetcherImpl">
+        <argument ref="openWeatherMapPropertiesBean"/>
+        <argument ref="openWeatherMapClientBean"/>
+    </bean>
+
+    <jaxrs:server address="/weather" id="weatherFetcherEndpoint">
+        <jaxrs:serviceBeans>
+            <ref component-id="weatherFetcher"/>
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+        </jaxrs:providers>
+    </jaxrs:server>
+
+</blueprint>

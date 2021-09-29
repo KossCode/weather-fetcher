@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<features name="${project.artifactId}-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+
+    <feature name='${project.artifactId}' description='${project.name}' version='${project.version}'>
+        <details>${project.description}</details>
+        <feature>blueprint-web</feature>
+        <feature>http</feature>
+        <feature>cxf</feature>
+
+        <feature>dependencies</feature>
+
+        <bundle>mvn:${project.groupId}/weather-fetcher-api/${project.version}</bundle>
+        <bundle>mvn:${project.groupId}/weather-fetcher-impl/${project.version}</bundle>
+    </feature>
+
+    <feature name="dependencies" version="1.0.0">
+
+        <bundle>mvn:javax.xml.bind/jaxb-api/2.3.1</bundle>
+        <bundle>mvn:javax.persistence/javax.persistence-api/2.2</bundle>
+        <bundle>mvn:com.google.code.gson/gson/2.8.5</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-rt-rs-client/3.4.4</bundle>
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.12.3</bundle>
+
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/2.12.3</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-core/2.12.3</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.12.3</bundle>
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.12.3</bundle>
+        <bundle>mvn:org.mapstruct/mapstruct/1.4.2.Final</bundle>
+
+    </feature>
+
+
+</features>

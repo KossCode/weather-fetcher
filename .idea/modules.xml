@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/weather-fetcher.iml" filepath="$PROJECT_DIR$/weather-fetcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weather-fetcher-api/weather-fetcher-api.iml" filepath="$PROJECT_DIR$/weather-fetcher-api/weather-fetcher-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weather-fetcher-features/weather-fetcher-features.iml" filepath="$PROJECT_DIR$/weather-fetcher-features/weather-fetcher-features.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weather-fetcher-impl/weather-fetcher-impl.iml" filepath="$PROJECT_DIR$/weather-fetcher-impl/weather-fetcher-impl.iml" />
+    </modules>
+  </component>
+</project>
