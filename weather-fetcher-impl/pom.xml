@@ -60,7 +60,8 @@
                         </Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                            edu.vshkvarok.traineeship.weather.fetcher.impl*;version=${project.version}
+                            edu.vshkvarok.traineeship.weather.fetcher.impl*;version=${project.version},
+                            edu.vshkvarok.traineeship.weather.fetcher.exceptions*;version=${project.version}
                         </Export-Package>
                         <Import-Package>
                             *

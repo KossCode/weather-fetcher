@@ -14,7 +14,6 @@ public class WeatherFetcherImpl implements WeatherFetcher {
 
     @Override
     public WeatherInfo getWeather(String country, String city) {
-
         String query = buildQuery(country, city);
 
         OpenWeatherMapInfo openWeatherInfo = openWeatherMapClient.getWeatherInfo(

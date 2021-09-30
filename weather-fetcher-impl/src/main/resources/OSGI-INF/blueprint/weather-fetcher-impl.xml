@@ -5,6 +5,7 @@
            xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
            xmlns:cxf="http://cxf.apache.org/blueprint/core"
            xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+           xmlns:util="http://www.w3.org/2001/XMLSchema"
            xsi:schemaLocation="
              http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
              http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
@@ -19,6 +20,11 @@
         </cm:default-properties>
     </cm:property-placeholder>
 
+    <bean id="exceptionDescription"
+          class="edu.vshkvarok.traineeship.weather.fetcher.exceptions.ExceptionDescription">
+        <argument value="Oops, something goes wrong =("/>
+        <argument value="500"/>
+    </bean>
 
     <bean id="openWeatherMapPropertiesBean"
           class="edu.vshkvarok.traineeship.weather.fetcher.impl.OpenWeatherMapProperties">
@@ -32,8 +38,8 @@
         <argument value="${baseAddress}"/>
     </bean>
 
-
-    <cxf:bus id="sampleServiceBus"/>
+    <cxf:bus id="sampleServiceBus">
+    </cxf:bus>
 
     <bean id="weatherFetcher"
           class="edu.vshkvarok.traineeship.weather.fetcher.impl.WeatherFetcherImpl">
@@ -46,7 +52,12 @@
             <ref component-id="weatherFetcher"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
-            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+            <bean id="jacksonProvider"
+                  class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+            <bean id="notFoundExceptionMapper"
+                  class="edu.vshkvarok.traineeship.weather.fetcher.exceptions.GlobalExceptionMapper">
+                <argument ref="exceptionDescription"/>
+            </bean>
         </jaxrs:providers>
     </jaxrs:server>
 
