@@ -12,7 +12,9 @@ public interface OpenWeatherMapClient {
     @GET
     @Path("/weather")
     @Produces(MediaType.APPLICATION_JSON)
-    OpenWeatherMapInfo getWeatherInfo(@QueryParam("appid") String appId,
-            @QueryParam("q") String query, @QueryParam("units") String units);
+    OpenWeatherMapInfo getWeatherInfo(
+            @QueryParam("appid") String appId,
+            @QueryParam("q") String query,
+            @QueryParam("units") String units);
 
 }

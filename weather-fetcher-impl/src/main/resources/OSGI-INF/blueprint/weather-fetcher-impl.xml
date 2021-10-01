@@ -21,7 +21,7 @@
     </cm:property-placeholder>
 
     <bean id="exceptionDescription"
-          class="edu.vshkvarok.traineeship.weather.fetcher.exceptions.ExceptionDescription">
+          class="edu.vshkvarok.traineeship.weather.fetcher.exception.ExceptionDescription">
         <argument value="Oops, something goes wrong =("/>
         <argument value="500"/>
     </bean>
@@ -55,7 +55,7 @@
             <bean id="jacksonProvider"
                   class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
             <bean id="notFoundExceptionMapper"
-                  class="edu.vshkvarok.traineeship.weather.fetcher.exceptions.GlobalExceptionMapper">
+                  class="edu.vshkvarok.traineeship.weather.fetcher.exception.GlobalExceptionMapper">
                 <argument ref="exceptionDescription"/>
             </bean>
         </jaxrs:providers>

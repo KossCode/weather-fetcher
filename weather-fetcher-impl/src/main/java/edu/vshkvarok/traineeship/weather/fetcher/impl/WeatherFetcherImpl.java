@@ -24,13 +24,11 @@ public class WeatherFetcherImpl implements WeatherFetcher {
         openWeatherInfo.setCountry(country);
         openWeatherInfo.setDate(new Date());
 
-        WeatherInfo weatherInfo = openWeatherInfo.convertToWeatherInfo();
+        WeatherInfo weatherInfo =
+                OpenWeatherMapInfoToWeatherInfoMapper
+                        .convertToWeatherInfo(
+                                openWeatherInfo);
         return weatherInfo;
-    }
-
-    @Override
-    public String getVersion() {
-        return "UNKNOWN";
     }
 
     private String buildQuery(String country, String city) {

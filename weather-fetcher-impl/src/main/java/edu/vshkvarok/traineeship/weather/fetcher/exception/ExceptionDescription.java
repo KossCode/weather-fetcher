@@ -1,4 +1,4 @@
-package edu.vshkvarok.traineeship.weather.fetcher.exceptions;
+package edu.vshkvarok.traineeship.weather.fetcher.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

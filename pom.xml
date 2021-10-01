@@ -46,6 +46,7 @@
                 <version>${osgi.version}</version>
             </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <build>

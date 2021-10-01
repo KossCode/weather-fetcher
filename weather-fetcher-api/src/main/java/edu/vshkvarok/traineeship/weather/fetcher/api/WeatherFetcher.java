@@ -11,16 +11,11 @@ import javax.ws.rs.core.MediaType;
 @Path("/")
 public interface WeatherFetcher {
 
-    @Path("/version")
-    @GET
-    String getVersion();
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{country}/{city}")
+    @Path("/country/{country}/city/{city}")
     WeatherInfo getWeather(
             @PathParam("country") String country,
-            @PathParam("city") String city
-            );
+            @PathParam("city") String city);
 
 }
