@@ -22,12 +22,12 @@ public class WeatherFetcherImpl implements WeatherFetcher {
 
         openWeatherInfo.setCity(city);
         openWeatherInfo.setCountry(country);
-        openWeatherInfo.setDate(new Date());
+        if(openWeatherInfo.getDate() == null){
+            openWeatherInfo.setDate(new Date());
+        }
 
-        WeatherInfo weatherInfo =
-                OpenWeatherMapInfoToWeatherInfoMapper
-                        .convertToWeatherInfo(
-                                openWeatherInfo);
+        WeatherInfo weatherInfo = OpenWeatherMapInfoToWeatherInfoMapper.convertToWeatherInfo(
+                openWeatherInfo);
         return weatherInfo;
     }
 

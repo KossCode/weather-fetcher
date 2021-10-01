@@ -25,6 +25,12 @@
         <lombok.version>1.18.12</lombok.version>
         <cglib.version>2.2</cglib.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <mackito.version>1.10.19</mackito.version>
+        <mockito-junit.version>3.12.4</mockito-junit.version>
+        <junit.version>5.7.2</junit.version>
+        <jackson.version>2.12.3</jackson.version>
+        <jersey-test.version>2.6</jersey-test.version>
+        <cxf-client.version>3.4.4</cxf-client.version>
     </properties>
 
     <modules>
