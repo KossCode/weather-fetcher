@@ -3,12 +3,14 @@ package edu.vshkvarok.traineeship.weather.fetcher.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.Objects;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class WeatherInfo {
 
     private String country;
