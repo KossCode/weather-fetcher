@@ -4,6 +4,10 @@ import edu.vshkvarok.traineeship.weather.fetcher.api.WeatherFetcher;
 import edu.vshkvarok.traineeship.weather.fetcher.model.WeatherInfo;
 import lombok.RequiredArgsConstructor;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 
 @RequiredArgsConstructor
@@ -14,6 +18,7 @@ public class WeatherFetcherImpl implements WeatherFetcher {
 
     @Override
     public WeatherInfo getWeather(String country, String city) {
+
         String query = buildQuery(country, city);
 
         OpenWeatherMapInfo openWeatherInfo = openWeatherMapClient.getWeatherInfo(

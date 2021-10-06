@@ -32,12 +32,16 @@
         <jackson.version>2.12.3</jackson.version>
         <jersey-test.version>2.6</jersey-test.version>
         <cxf-client.version>3.4.4</cxf-client.version>
+        <hibernate.version>5.4.30.Final</hibernate.version>
+        <hibernate.javax.version>1.0.0.Final</hibernate.javax.version>
     </properties>
 
     <modules>
         <module>weather-fetcher-api</module>
         <module>weather-fetcher-impl</module>
         <module>weather-fetcher-features</module>
+        <module>weather-fetcher-datasource</module>
+        <module>weather-fetcher-hibernate</module>
     </modules>
 
     <dependencyManagement>

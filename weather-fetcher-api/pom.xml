@@ -38,6 +38,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>${hibernate.javax.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -52,7 +59,8 @@
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
                             edu.vshkvarok.traineeship.weather.fetcher.api*;version=${project.version},
-                            edu.vshkvarok.traineeship.weather.fetcher.model*;version=${project.version}
+                            edu.vshkvarok.traineeship.weather.fetcher.model*;version=${project.version},
+                            edu.vshkvarok.traineeship.weather.fetcher.jpa*;version=${project.version}
                         </Export-Package>
                         <Import-Package>
                             *

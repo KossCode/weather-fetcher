@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1633530172120
+Build-Jdk: 11.0.12
+Built-By: konstantine
+Bundle-ManifestVersion: 2
+Bundle-Name: Weather Fetcher Datasource
+Bundle-SymbolicName: weather-fetcher-datasource
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Tool: Bnd-5.1.1.202006162103
