@@ -1,0 +1,8 @@
+edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/WeatherInfo.class
+edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/Weather.class
+edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/IncomingRequest.class
+edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/repository/RepositoryImpl.class
+edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/IncomingRequest$IncomingRequestBuilder.class
+edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/Temperature$TemperatureScale.class
+edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/Temperature.class
+edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/repository/Repository.class

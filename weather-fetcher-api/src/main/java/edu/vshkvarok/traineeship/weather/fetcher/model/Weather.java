@@ -10,6 +10,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Weather {
+
     private String overall;
     private Temperature temperature;
 

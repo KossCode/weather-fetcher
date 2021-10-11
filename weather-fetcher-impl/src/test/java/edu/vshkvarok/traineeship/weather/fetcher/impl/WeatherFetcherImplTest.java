@@ -1,5 +1,6 @@
 package edu.vshkvarok.traineeship.weather.fetcher.impl;
 
+import edu.vshkvarok.traineeship.weather.fetcher.persistence.impl.repository.RepositoryImpl;
 import edu.vshkvarok.traineeship.weather.fetcher.model.WeatherInfo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,12 +38,14 @@ public class WeatherFetcherImplTest {
 
     @Mock
     private OpenWeatherMapClient thirdPartyWeatherService;
+    @Mock
+    private RepositoryImpl repository;
     private WeatherFetcherImpl weatherFetcher;
 
     @BeforeEach
     void setUp() {
         weatherFetcher = new WeatherFetcherImpl(FAKE_PROPERTIES,
-                thirdPartyWeatherService);
+                thirdPartyWeatherService, repository);
     }
 
     @Test

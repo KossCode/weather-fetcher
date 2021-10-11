@@ -8,11 +8,16 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/weather-fetcher-datasource/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-fetcher-entity/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-fetcher-hibernate/pom.xml" />
         <option value="$PROJECT_DIR$/weather-fetcher-outsideService/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-fetcher-persistence-datasource/pom.xml" />
+        <option value="$PROJECT_DIR$/weather-fetcher-persistence/pom.xml" />
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" default="true" project-jdk-name="15" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="accountSettings">
     <option name="activeRegion" value="us-east-1" />
     <option name="recentlyUsedRegions">

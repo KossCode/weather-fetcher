@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TemperatureTest {
 
-    private static final double DEGREES = 27.0d;
+    private static final Double DEGREES = 27.0d;
     private static final Temperature CREATED_BY_CONSTRUCTOR_EXAMPLE = new Temperature(
             Temperature.TemperatureScale.CELSIUS,
             DEGREES);

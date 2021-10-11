@@ -1,0 +1,6 @@
+/home/konstantine/workspace/weather-fetcher/persistence/impl/src/main/java/edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/repository/RepositoryImpl.java
+/home/konstantine/workspace/weather-fetcher/persistence/impl/src/main/java/edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/repository/Repository.java
+/home/konstantine/workspace/weather-fetcher/persistence/impl/src/main/java/edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/Temperature.java
+/home/konstantine/workspace/weather-fetcher/persistence/impl/src/main/java/edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/WeatherInfo.java
+/home/konstantine/workspace/weather-fetcher/persistence/impl/src/main/java/edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/IncomingRequest.java
+/home/konstantine/workspace/weather-fetcher/persistence/impl/src/main/java/edu/vshkvarok/traineeship/weather/fetcher/persistence/impl/entity/Weather.java

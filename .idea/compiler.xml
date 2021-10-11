@@ -8,20 +8,27 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="weather-fetcher-api" />
-        <module name="weather-fetcher-hibernate" />
-        <module name="weather-fetcher-impl" />
         <module name="weather-fetcher-features" />
-        <module name="weather-fetcher-datasource" />
+        <module name="datasource" />
+        <module name="weather-fetcher-persistence-impl" />
+        <module name="weather-fetcher-impl" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="datasource" target="1.8" />
+      <module name="impl" target="1.8" />
+      <module name="persistence" target="1.8" />
       <module name="weather-fetcher" target="1.8" />
       <module name="weather-fetcher-api" target="1.8" />
       <module name="weather-fetcher-datasource" target="8" />
+      <module name="weather-fetcher-entity" target="1.8" />
       <module name="weather-fetcher-features" target="1.8" />
-      <module name="weather-fetcher-hibernate" target="8" />
+      <module name="weather-fetcher-hibernate" target="1.8" />
       <module name="weather-fetcher-impl" target="8" />
       <module name="weather-fetcher-outsideService" target="11" />
+      <module name="weather-fetcher-persistence" target="1.8" />
+      <module name="weather-fetcher-persistence-datasource" target="8" />
+      <module name="weather-fetcher-persistence-impl" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

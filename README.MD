@@ -6,6 +6,7 @@
 1. Karaf commands
 ```
 repo-add cxf
+repo-add mvn:org.hibernate/hibernate-osgi/5.4.30.Final/xml/karaf
 repo-add  mvn:ua.vshkvarok.traineeship/weather-fetcher-features/1.0.0-SNAPSHOT/xml/features
 feature:install weather-fetcher-features
 ```

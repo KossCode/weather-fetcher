@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1633948137570
+Build-Jdk: 1.8.0_302
+Built-By: konstantine
+Bundle-Blueprint: OSGI-INF/blueprint/hibernate.xml
+Bundle-ManifestVersion: 2
+Bundle-Name: Weather Fetcher Persistence Impl
+Bundle-SymbolicName: weather-fetcher-persistence-impl
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: edu.vshkvarok.traineeship.weather.fetcher.persistence.im
+ pl.entity;version="1.0.0.SNAPSHOT";uses:="javax.persistence",edu.vshkva
+ rok.traineeship.weather.fetcher.persistence.impl.repository;version="1.
+ 0.0.SNAPSHOT";uses:="javax.persistence,javax.transaction"
+Export-Service: edu.vshkvarok.traineeship.weather.fetcher.persistence.im
+ pl.repository.Repository;osgi.service.blueprint.compname=repository
+Import-Package: com.fasterxml.jackson.annotation;version="[2.12,3)",java
+ x.persistence;version="[2.2,3)",javax.transaction;version="[1.2,2)",org
+ .osgi.service.blueprint;version="[1.0.0,2.0.0)",org.hibernate.proxy;ver
+ sion="[5.4,6)",javassist.util.proxy;version="[3.27,4)"
+Meta-Persistence: META-INF/persistence.xml
+Provide-Capability: osgi.service;effective:=active;objectClass="javax.pe
+ rsistence.EntityManager";osgi.unit.name=weather-hibernate,osgi.service;
+ effective:=active;objectClass="javax.persistence.EntityManagerFactory";
+ osgi.unit.name=weather-hibernate,osgi.service;effective:=active;objectC
+ lass="org.apache.aries.jpa.template.JpaTemplate";osgi.unit.name=weather
+ -hibernate,osgi.service;effective:=active;objectClass="org.apache.aries
+ .jpa.supplier.EmSupplier";osgi.unit.name=weather-hibernate
+Require-Capability: osgi.extender;osgi.extender="aries.jpa",osgi.service
+ ;effective:=active;objectClass="javax.transaction.TransactionManager",o
+ sgi.service;effective:=active;objectClass="javax.sql.DataSource";filter
+ :="(osgi.jndi.service.name=weather_data_source)",osgi.ee;filter:="(&(os
+ gi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-5.1.1.202006162103

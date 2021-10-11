@@ -13,38 +13,38 @@
              "
            default-activation="lazy">
 
+    <!--Refs-->
+    <reference id="repository"
+               interface="edu.vshkvarok.traineeship.weather.fetcher.persistence.impl.repository.Repository"/>
+
     <cm:property-placeholder persistent-id="org.openweathermap.api"
                              update-strategy="reload">
         <cm:default-properties>
-            <!--            <cm:property name="units" value="<value>" />-->
+            <cm:property name="appId" value="123"/>
+            <cm:property name="units" value="123"/>
+            <cm:property name="baseAddress" value="123"/>
         </cm:default-properties>
     </cm:property-placeholder>
 
-    <bean id="exceptionDescription"
-          class="edu.vshkvarok.traineeship.weather.fetcher.exception.ExceptionDescription">
-        <argument value="Oops, something goes wrong =("/>
-        <argument value="500"/>
-    </bean>
+    <cxf:bus id="sampleServiceBus">
+    </cxf:bus>
 
     <bean id="openWeatherMapPropertiesBean"
           class="edu.vshkvarok.traineeship.weather.fetcher.impl.OpenWeatherMapProperties">
         <argument value="${appId}"/>
         <argument value="${units}"/>
     </bean>
-
     <bean id="openWeatherMapClientBean"
           class="edu.vshkvarok.traineeship.weather.fetcher.impl.StaticOpenWeatherMapFactory"
           factory-method="createProxy">
         <argument value="${baseAddress}"/>
     </bean>
 
-    <cxf:bus id="sampleServiceBus">
-    </cxf:bus>
-
     <bean id="weatherFetcher"
           class="edu.vshkvarok.traineeship.weather.fetcher.impl.WeatherFetcherImpl">
         <argument ref="openWeatherMapPropertiesBean"/>
         <argument ref="openWeatherMapClientBean"/>
+        <argument ref="repository"/>
     </bean>
 
     <jaxrs:server address="/weather" id="weatherFetcherEndpoint">
@@ -58,7 +58,19 @@
                   class="edu.vshkvarok.traineeship.weather.fetcher.exception.GlobalExceptionMapper">
                 <argument ref="exceptionDescription"/>
             </bean>
+            <ref component-id="requestReporterFilter"/>
         </jaxrs:providers>
     </jaxrs:server>
+
+    <bean id="exceptionDescription"
+          class="edu.vshkvarok.traineeship.weather.fetcher.exception.ExceptionDescription">
+        <argument value="Oops, something goes wrong =("/>
+        <argument value="500"/>
+    </bean>
+
+    <bean id="requestReporterFilter"
+          class="edu.vshkvarok.traineeship.weather.fetcher.filter.BasicRequestReporterFilter">
+        <argument ref="repository"/>
+    </bean>
 
 </blueprint>

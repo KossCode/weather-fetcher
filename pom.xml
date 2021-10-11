@@ -34,14 +34,15 @@
         <cxf-client.version>3.4.4</cxf-client.version>
         <hibernate.version>5.4.30.Final</hibernate.version>
         <hibernate.javax.version>1.0.0.Final</hibernate.javax.version>
+        <my.sql.connector.version>5.1.18</my.sql.connector.version>
+        <mariabdb.client.version>2.7.4</mariabdb.client.version>
     </properties>
 
     <modules>
         <module>weather-fetcher-api</module>
         <module>weather-fetcher-impl</module>
         <module>weather-fetcher-features</module>
-        <module>weather-fetcher-datasource</module>
-        <module>weather-fetcher-hibernate</module>
+        <module>persistence</module>
     </modules>
 
     <dependencyManagement>
@@ -56,8 +57,12 @@
                 <artifactId>osgi.cmpn</artifactId>
                 <version>${osgi.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
         </dependencies>
-
     </dependencyManagement>
 
     <build>

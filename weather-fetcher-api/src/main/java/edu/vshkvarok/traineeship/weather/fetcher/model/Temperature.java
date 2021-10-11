@@ -10,8 +10,9 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Temperature {
+
     private TemperatureScale scale;
-    private double degree;
+    private Double degree;
 
     public enum TemperatureScale {
         CELSIUS
