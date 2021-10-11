@@ -2,7 +2,6 @@
 /weather-fetcher-api/target/
 /weather-fetcher-features/target/
 /weather-fetcher-impl/target/
-/weather-fetcher-hibernate/target/
-/weather-fetcher-datasource/target/
-/weather-fetcher-entity/target/
+/persistence/datasource/target/
+/persistence/impl/target/
 /.idea/
